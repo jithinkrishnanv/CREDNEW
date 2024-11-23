@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KVGOSC - Event Management</title>
+    <meta name="description" content="KVGOSC is a community driven by tech enthusiasts and open-source contributors, providing training and skill development for young students.">
+    <meta name="keywords" content="KVGOSC, open-source, community, tech enthusiasts, training, skill development">
+    <meta name="author" content="KVG College of Engineering Sullia">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="final draft.css">
+    <script src="finaldraft.js"></script>
+    
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row md:justify-between items-start md:items-center md:px-8">
+            <div class="text-xl md:text-3xl font-bold mb-2 md:mb-0 text-left">K V G C E O S C</div>
+            <nav class="flex space-x-4 text-sm md:text-base text-left mt-2 md:mt-0">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="events.html" class="hover:text-gray-300">Events</a>
+                <a href="#" class="hover:text-gray-300">Blogs</a>
+                <a href="team.html" class="hover:text-gray-300">Team</a>
+                <a href="#" class="hover:text-gray-300">WOR</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" onclick="toggleMenu()" aria-label="Toggle Menu">Menu</button>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden space-y-2 mt-4">
+                <a href="index.html" class="block hover:text-gray-300">Home</a>
+                <a href="events.html" class="block hover:text-gray-300">Events</a>
+                <a href="#" class="block hover:text-gray-300">Blogs</a>
+                <a href="team.html" class="block hover:text-gray-300">Team</a>
+                <a href="#" class="block hover:text-gray-300">WOR</a>
+            </div>
+        </div>
+    </header>
+<!-- Mobile View Title -->
+<h2 class="text-2xl md:text-4xl font-bold text-blue-700 mb-4 text-center md:hidden">
+    <span class="inline-block relative">
+        Get
+        <div class="h-1 bg-blue-700 mx-auto mt-1" style="width: 100%; max-width: 3.5rem;"></div>
+    </span> 
+    Trained by Experts
+</h2>
+
+<div class="md:w-1/2 flex justify-center md:justify-start">
+</div>
+
+<!-- Desktop View Title -->
+<div class="md:w-1/2 text-left" style="padding-left: 1.5rem;">
+    <h2 class="hidden md:block text-4xl font-bold mb-4 text-blue-700">
+        <span class="inline-block relative">
+            Get
+            <div class="h-1 bg-blue-700 mx-auto mb-4" style="width: 100%; margin-top: 20px; max-width: 3.5rem;"></div>
+        </span>       
+        Trained by Experts
+    </h2>
+    <p class="mb-4 text-gray-700">
+        KVGOSC is all about helping each other learn and improve. We conduct workshops and training sessions led by experts from other technical communities and student experts. Stay updated with the latest technologies and learn new skills.
+    </p>
+</div>
+</section>
+
+<section class="mb-16 flex flex-col md:flex-row items-center" style="margin-left: 20px; margin-right: 20px; margin: 40px;">
+<!-- Mobile View Title -->
+<h2 class="text-xl md:text-4xl font-bold text-blue-700 mb-2 text-center md:hidden">
+    <span class="inline-block relative">
+        Explore
+        <div class="h-1 bg-blue-700 mx-auto mt-1" style="width: 4.5rem;"></div>
+    </span>
+    Clubs and Activities
+</h2>
+
+<div class="md:w-1/2 flex justify-center md:order-last">
+</div>
+
+<!-- Desktop View Title -->
+<div class="md:w-1/2 text-left mb-6 md:mb-0 md:order-first px-4 md:px-0">
+    <h2 class="hidden md:block text-4xl font-bold mb-4 text-blue-700">
+        <span class="inline-block relative">
+            Explore
+            <div class="h-1 bg-blue-700 mx-auto mb-2" style="width: 8.5rem; margin-top: 20px;"></div>
+        </span>
+        Clubs and Activities
+    </h2>
+    <p class="mb-4 text-gray-700">
+        KVGOSC is a community of clubs and individuals who contribute to our events and activities. Explore our active clubs like Mozilla Campus Clubs, Developer Students Clubs, and GitHub Campus Experts.
+    </p>
+    <button class="bg-blue-500 text-white px-6 py-3 rounded-full transition-colors duration-300 hover:bg-pink-400">Learn More</button>
+</div>
+</section>
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:px-8 responsive-container">
+        <!-- Form and Table Section -->
+        <div class="container">
+            <header class="flex justify-between items-center mb-4">
+                <div class="entries">
+                    Show 
+                    <select id="table_size" class="border px-2 py-1">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                    entries
+                </div>
+                <div>
+                    <input type="text" id="search" placeholder="Search..." class="border px-2 py-1">
+                </div>
+                <div>
+                    <button onclick="openPopup()" class="bg-blue-500 text-white px-4 py-2 rounded">New Entry</button>
+                </div>
+            </header>
+            <div class="table-container">
+                <table class="w-full border-collapse border border-gray-300">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border px-2 py-1">S.No</th>
+                            <th class="border px-2 py-1">PHOTO</th>
+                            <th class="border px-2 py-1">NAME</th>
+                            <th class="border px-2 py-1">COMPANY</th>
+                            <th class="border px-2 py-1">DESIGNATION</th>
+                            <th class="border px-2 py-1">BADGE NAME</th>
+                            <th class="border px-2 py-1">EVENT TITLE</th>
+                            <th class="border px-2 py-1">EVENT INFORMATION</th>
+                            <th class="border px-2 py-1">TIME</th>
+                            <th class="border px-2 py-1">DATE</th>
+                            <th class="border px-2 py-1">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="userInfo">
+                        <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </div>
+            <!-- Pagination -->
+            <div class="pagination mt-4"></div>
+        </div>
+    </main>
+
+    <!-- Popup Form -->
+    <div class="dark_bg">
+        <div class="popup">
+            <header class="flex justify-between items-center mb-4">
+                <h2 class="modalTitle text-lg font-bold">Fill the Form</h2>
+                <button onclick="closePopup()" class="closeBtn">&times;</button>
+            </header>
+            <form id="myForm">
+                <div class="imgholder mb-4">
+                    <label for="uploadimg">
+                        <input type="file" id="uploadimg" accept="image/*" class="hidden">
+                        <img src="./assets/pic1.png" alt="Photo" id="photo">
+                        <span>Upload Image</span>
+                    </label>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="name">NAME:</label>
+                        <input type="text" id="name" class="w-full border p-2" required>
+                    </div>
+                    <div>
+                        <label for="company">COMPANY:</label>
+                        <input type="text" id="company" class="w-full border p-2" required>
+                    </div>
+                    <div>
+                        <label for="designation">DESIGNATION:</label>
+                        <input type="text" id="designation" class="w-full border p-2" required>
+                    </div>
+                    <div>
+                        <label for="badgeName">BADGE NAME:</label>
+                        <input type="text" id="badgeName" class="w-full border p-2" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label for="eventTitle">EVENT TITLE:</label>
+                    <input type="text" id="eventTitle" class="w-full border p-2" required>
+                </div>
+                <div class="mb-4">
+                    <label for="eventInformation">EVENT INFORMATION:</label>
+                    <textarea id="eventInformation" class="w-full border p-2" rows="3" required></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="time">TIME:</label>
+                        <input type="time" id="time" class="w-full border p-2" required>
+                    </div>
+                    <div>
+                        <label for="date">DATE:</label>
+                        <input type="date" id="date" class="w-full border p-2" required>
+                    </div>
+                </div>
+                <div class="popupFooter">
+                    <button type="submit" class="submitBtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-700 text-white py-8 mt-16">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between px-4">
+            <!-- Social Links Section -->
+            <div class="flex flex-col items-start space-y-2 mb-4 md:mb-0">
+                <h3 class="text-lg font-semibold">Connect with Us</h3>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300 hover:text-pink-400" aria-label="GitHub">GitHub</a>
+                <a href="https://www.instagram.com/kvgceosc?igsh=MXYxd3dxaHI1dTBxOQ==" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300 hover:text-pink-400" aria-label="Instagram">Instagram</a>
+                <a href="https://www.linkedin.com/company/kvgceosc/" target="_blank" rel="noopener noreferrer" class="transition-colors duration-300 hover:text-pink-400" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" class="transition-colors duration-300 hover:text-pink-400" aria-label="Twitter">Twitter</a>
+                <a href="#" class="transition-colors duration-300 hover:text-pink-400" aria-label="YouTube">YouTube</a>
+            </div>
+            
+            <!-- Guidelines and Donate Section -->
+            <div class="flex flex-col items-start space-y-2 mb-4 md:mb-0">
+                <h3 class="text-lg font-semibold">Community</h3>
+                <a href="#" class="transition-colors duration-300 hover:text-pink-400" aria-label="Community Guidelines">Community Guidelines</a>
+                <a href="#" class="transition-colors duration-300 hover:text-pink-400" aria-label="Code of Conduct">Code of Conduct</a>
+                <a href="#" class="transition-colors duration-300 hover:text-pink-400" aria-label="Donate Us">Donate Us</a>
+            </div>
+            
+            <!-- Contact Information Section -->
+            <div class="flex flex-col items-start space-y-2">
+                <h3 class="text-lg font-semibold">Contact Us</h3>
+                <p>KVG Open-Source Community</p>
+                <p>KVG College of Engineering Kurunjibag,</p>
+                <p>Sullia, Dakshina Kannada, Karnataka, India-574239</p>
+            </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="container mx-auto text-center text-sm mt-4">
+            <p>&copy; 2024 KVGCE Open-Source Community. All rights reserved.</p>
+            <p><a href="#" class="hover:underline">Privacy Policy</a> | <a href="#" class="hover:underline">Terms of Service</a></p>
+        </div>
+    </footer>
+</body>
+</html>
